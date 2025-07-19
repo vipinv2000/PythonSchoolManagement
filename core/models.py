@@ -15,8 +15,6 @@ class User(AbstractUser):
 
 class Teacher(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=100,default='Unknown')
-    last_name = models.CharField(max_length=100,default='Unknown')
     employee_id = models.CharField(max_length=20, unique=True)
     phone_number = models.CharField(max_length=15)
     subject_specialization = models.CharField(max_length=100)
@@ -34,8 +32,6 @@ class Teacher(models.Model):
 
 class Student(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=100,default='Unknown')
-    last_name = models.CharField(max_length=100,default='Unknown')
     class_name = models.CharField(max_length=50,default='1')
     roll_number = models.CharField(max_length=20, unique=True)
     phone_number = models.CharField(max_length=15)
